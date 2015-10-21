@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="mp3PlayerPP" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Man-s2-0di">
+                                <rect key="frame" x="7" y="504" width="586" height="86"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="86" id="T8y-gf-mgd"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem title="Play" id="nsV-tZ-bON">
+                                        <connections>
+                                            <action selector="playPauseButton:" destination="BYZ-38-t0r" id="XVx-va-Dgr"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="LZZ-AA-W8y"/>
+                                    <barButtonItem title="Stop" id="6Qu-3y-lnN">
+                                        <connections>
+                                            <action selector="stop:" destination="BYZ-38-t0r" id="WlA-D3-j1T"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="I96-IV-RkO">
+                                <rect key="frame" x="18" y="518" width="564" height="31"/>
+                                <animations/>
+                                <connections>
+                                    <action selector="sliderChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="7cr-jK-mS7"/>
+                                </connections>
+                            </slider>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="epN-yK-jam">
+                                <rect key="frame" x="241" y="554" width="119" height="29"/>
+                                <animations/>
+                                <segments>
+                                    <segment title="1"/>
+                                    <segment title="1.25"/>
+                                    <segment title="1.5"/>
+                                </segments>
+                                <connections>
+                                    <action selector="speedChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="Hac-Gk-cRs"/>
+                                </connections>
+                            </segmentedControl>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eCw-kw-Xge">
+                                <rect key="frame" x="30" y="40" width="540" height="454"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="UnH-Bw-DVu">
+                                        <rect key="frame" x="0.0" y="28" width="540" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UnH-Bw-DVu" id="diK-Wa-zPh">
+                                            <rect key="frame" x="0.0" y="0.0" width="540" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <animations/>
+                                        </tableViewCellContentView>
+                                        <animations/>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="epN-yK-jam" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0J2-Vc-LOw"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Man-s2-0di" secondAttribute="trailing" constant="-13" id="CHh-3h-iwR"/>
+                            <constraint firstItem="I96-IV-RkO" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Gue-Kh-e5j"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Man-s2-0di" secondAttribute="bottom" constant="10" id="I0z-wI-poT"/>
+                            <constraint firstItem="eCw-kw-Xge" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="Wdp-Lv-F1k"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="eCw-kw-Xge" secondAttribute="trailing" constant="10" id="apY-4d-xKP"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="epN-yK-jam" secondAttribute="bottom" constant="18" id="czB-lw-JJB"/>
+                            <constraint firstItem="Man-s2-0di" firstAttribute="top" secondItem="eCw-kw-Xge" secondAttribute="bottom" constant="10" id="dzu-fh-7kH"/>
+                            <constraint firstItem="Man-s2-0di" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-13" id="f9S-HD-GQk"/>
+                            <constraint firstItem="eCw-kw-Xge" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="iRX-Pu-EBV"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="I96-IV-RkO" secondAttribute="bottom" constant="52" id="mbf-gJ-CfZ"/>
+                            <constraint firstItem="I96-IV-RkO" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="pnC-bZ-P9s"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="playPause" destination="nsV-tZ-bON" id="IUj-nm-YDl"/>
+                        <outlet property="playlistTableview" destination="eCw-kw-Xge" id="OxJ-GE-2cY"/>
+                        <outlet property="sliderValue" destination="I96-IV-RkO" id="Wma-um-ZRd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139" y="260"/>
+        </scene>
+    </scenes>
+</document>
